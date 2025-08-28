@@ -1,181 +1,67 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nosso Cantinho</title>
-<style>
-/* Estilos principais */
-body {
-    margin: 0;
-    padding: 0;
-    background: #ffebee;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    color: #b71c1c;
-    overflow-x: hidden;
-}
-header {
-    background: #b71c1c;
-    color: white;
-    padding: 20px;
-    font-size: 24px;
-    font-weight: bold;
-}
-#typing {
-    font-size: 18px;
-    width: 90%;
-    max-width: 800px;
-    margin: 20px auto;
-    text-align: left;
-    white-space: pre-wrap;
-    border: 2px solid #b71c1c;
-    padding: 15px;
-    border-radius: 15px;
-    background: #fff5f5;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-#timer {
-    font-size: 20px;
-    margin-top: 15px;
-    font-weight: bold;
-}
-.gallery {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 20px;
-}
-.gallery img {
-    max-height: 250px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-video {
-    width: 90%;
-    max-width: 600px;
-    margin-top: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-/* Corações caindo */
-.heart {
-    position: fixed;
-    top: -10px;
-    color: #e91e63;
-    font-size: 24px;
-    animation: fall 10s linear infinite;
-}
-@keyframes fall {
-    to {
-        transform: translateY(110vh);
-    }
-}
-/* Botão da música */
-#music-btn {
-    background: #b71c1c;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 15px;
-    font-size: 16px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-#music-btn:hover {
-    background: #d32f2f;
-}
-</style>
-</head>
-<body>
-<header>Feito para você❤️</header>
-
-<div id="typing"></div>
-<div id="timer"></div>
-
-<button id="music-btn">▶ Tocar Música</button>
-<div id="https://youtu.be/HR4ZxjGQGYY"></div>
-
-
-<h2>Nossas Memórias</h2>
-<div class="gallery">
-    <img src="img/IMG_20240121_201119.jpg" alt="Foto 1">
-    <img src="img/20230101_051735.jpg" alt="Foto 2">
-    <img src="img/IMG_20241009_203920_539.webp" alt="Foto 3">
-    <img src="img/IMG_20241225_041121_213.webp" alt="Foto 4">
-    <img src="img/IMG_20250421_001156_206.webp" alt="Foto 5">
-</div>
-
-<h2>Nosso Vídeo</h2>
-<video controls>
-    <source src="video/VID-20241207-WA0081.mp4" type="video/mp4">
-    Seu navegador não suporta vídeos.
-</video>
-
-<script>
-// Texto com efeito de digitação
-const text = `Ai vai mais uma cartinha, daquelas que falamos o quanto sentimos falta, que sentimos saudades de tudo que vivemos e mais um pouco.
-
-Ainda que hoje estamos distantes fisicamente, mas, nos meus pensamentos você está presente todos os dias, desde o acordar até o meu adormecer, tu ainda faz parte das minhas orações, pedindo que nada aconteça contigo e com sua família, ainda faz parte das minhas brincadeiras internas que só nós entendemos, até na hora que faço o lanchinho da noite, lembro que provavelmente ia dizer que não queria e ia comer quase todo. Lembrar ao deitar pra assistir um filme e não ter você do lado, pra ficar pausando e pesquisando oq tem na mensagem do celular do protagonista, porque a legenda não traduziu. É isso que dar saudade, a saudade de coisas comuns virarem especiais com você do lado, e por mais que isso pareça distante, ainda quero viver muitos momentos contigo, mesmo que esses momentos trazem um pouco de arrependimento, como, a carne de sol cozida do Flor de Vinagreira ou a bebida da Península com gosto de remédio kkkk. A gente ainda tem tantas coisas pra viver, e seria estranho viver as coisas que planejamos juntos, separados. Passar em lugares que certamente iriam nos lembrar de trazer os meninos pra brincar e eu sempre dizer “na próxima a gente traz eles”. Sei que ainda temos muito o que amadurecer, pra sermos melhores, mas  eu acho que ao lado da pessoa certa, esse progresso é muito mais rápido e mais leve, assim como foi todo o nosso relacionamento.
-Queria que parasse de pensar que não vamos dar certo, e voltar a dizer “E se” da mesma forma que fez no começo. Tu sabe que somos um casal foda, só não entendo como foi questionar isso, sempre nos apioamos, e mesmo quando as ideias não batem, nos buscamos entender o outro, do jeito que hoje eu entendo pq tu tomava remédio pra não suar, pow, é muito chato e dar uma certa vergonhar ficar suado nos lugares.
-È Negona, isso é um pouco de muita coisa que tenho pra dizer, eu queria muito que a gente estivesse juntos, juntos mesmo, e foi e está sendo difícil pra nós dois, mas,  é mais complicado ainda quando a  gente ainda tem um sentimento muito grande um pelo outro. Eu te amo muito, e ainda quero ser, o seu “ E se “ novamente.`;
-
-let i = 0;
-function type() {
-    if (i < text.length) {
-        document.getElementById('typing').innerHTML += text.charAt(i);
-        i++;
-        setTimeout(type, 40);
-    }
-}
-type();
-
 // Cronômetro
-const startDate = new Date("2021-08-15T00:00:00");
-function updateTimer() {
-    const now = new Date();
-    let diff = now - startDate;
-    let years = Math.floor(diff / (1000*60*60*24*365));
-    diff -= years*(1000*60*60*24*365);
-    let months = Math.floor(diff / (1000*60*60*24*30));
-    diff -= months*(1000*60*60*24*30);
-    let days = Math.floor(diff / (1000*60*60*24));
-    diff -= days*(1000*60*60*24);
-    let hours = Math.floor(diff / (1000*60*60));
-    diff -= hours*(1000*60*60);
-    let minutes = Math.floor(diff / (1000*60));
-    diff -= minutes*(1000*60);
-    let seconds = Math.floor(diff / 1000);
-    document.getElementById('timer').innerHTML = `Juntos há ${years} anos, ${months} meses, ${days} dias, ${hours}h ${minutes}m ${seconds}s`;
-}
-setInterval(updateTimer, 1000);
+const inicio = new Date("2021-08-15T00:00:00").getTime();
+setInterval(() => {
+const agora = new Date().getTime();
+const diff = agora - inicio;
+const anos = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+const dias = Math.floor((diff / (1000 * 60 * 60 * 24)) % 365);
+const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+const minutos = Math.floor((diff / (1000 * 60)) % 60);
+const segundos = Math.floor((diff / 1000) % 60);
+document.getElementById("cronometro").innerText = `Estamos juntos há ${anos} anos, ${dias} dias, ${horas}h ${minutos}m ${segundos}s ❤️`;
+}, 1000);
 
-// Música do YouTube
-let isPlaying = false;
-const btn = document.getElementById('music-btn');
-btn.addEventListener('click', () => {
-    const player = document.getElementById('ytplayer').contentWindow;
-    if (!isPlaying) {
-        player.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-        btn.innerText = "⏸ Pausar Música";
-    } else {
-        player.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-        btn.innerText = "▶ Tocar Música";
-    }
-    isPlaying = !isPlaying;
-});
 
-// Corações caindo
-function createHeart() {
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
-    heart.innerHTML = '❤️';
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.animationDuration = Math.random() * 5 + 5 + 's';
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 10000);
+// Música YouTube
+let player;
+function onYouTubeIframeAPIReady() {
+player = new YT.Player('player');
 }
-setInterval(createHeart, 500);
+function toggleMusica() {
+if (player && player.getPlayerState() === 1) {
+player.pauseVideo();
+} else {
+player.playVideo();
+}
+}
+
+
+// Animação corações
+const canvas = document.getElementById('hearts');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+const hearts = [];
+function Heart() {
+this.x = Math.random() * canvas.width;
+this.y = 0;
+this.size = Math.random() * 20 + 10;
+this.speed = Math.random() * 2 + 1;
+}
+function drawHeart(x, y, size) {
+ctx.beginPath();
+ctx.moveTo(x, y);
+ctx.bezierCurveTo(x, y - size / 2, x - size, y - size / 2, x - size, y);
+ctx.bezierCurveTo(x - size, y + size / 2, x, y + size, x, y + size * 1.5);
+ctx.bezierCurveTo(x, y + size, x + size, y + size / 2, x + size, y);
+ctx.bezierCurveTo(x + size, y - size / 2, x, y - size / 2, x, y);
+ctx.fillStyle = 'rgba(255,0,0,0.6)';
+ctx.fill();
+}
+function update() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+if (Math.random() < 0.1) hearts.push(new Heart());
+for (let i = 0; i < hearts.length; i++) {
+const h = hearts[i];
+h.y += h.speed;
+drawHeart(h.x, h.y, h.size);
+if (h.y > canvas.height) hearts.splice(i, 1);
+}
+requestAnimationFrame(update);
+}
+update();
 </script>
+<script src="https://www.youtube.com/iframe_api"></script>
 </body>
 </html>
